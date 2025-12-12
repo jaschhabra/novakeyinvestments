@@ -194,7 +194,7 @@
             border-bottom: 1px solid #eee;
         }
 
-        .hero-stat:last-child {
+        .hero-stat:last-of-type {
             border-bottom: none;
         }
 
@@ -205,6 +205,13 @@
         .hero-stat-value {
             font-weight: 700;
             color: var(--success);
+        }
+
+        .hero-card-note {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
         }
 
         /* Problem Section */
@@ -264,6 +271,49 @@
             color: var(--text-light);
         }
 
+        /* Stakes Section */
+        .stakes {
+            padding: 6rem 2rem;
+            background: #1a1a2e;
+        }
+
+        .stakes .section-header h2 {
+            color: #ff6b6b;
+        }
+
+        .stakes .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .stakes-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .stake-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255, 107, 107, 0.3);
+        }
+
+        .stake-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .stake-card h3 {
+            color: #ff6b6b;
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .stake-card p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
         /* Imagine Section */
         .imagine {
             padding: 6rem 2rem;
@@ -276,6 +326,15 @@
 
         .imagine .section-header p {
             color: rgba(255,255,255,0.8);
+        }
+
+        .transformation-text {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            text-align: center;
+            line-height: 1.8;
         }
 
         .imagine-grid {
@@ -308,6 +367,61 @@
         .imagine-card p {
             color: rgba(255,255,255,0.9);
             font-size: 0.95rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 6rem 2rem;
+            background: var(--bg-alt);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-content p {
+            color: var(--text);
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .author-info h4 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .author-info p {
+            color: var(--text-light);
+            font-size: 0.875rem;
         }
 
         /* Features Section */
@@ -579,7 +693,9 @@
             }
 
             .problems-grid,
-            .features-grid {
+            .features-grid,
+            .stakes-grid,
+            .testimonials-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -638,7 +754,8 @@
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Build Wealth Through Real Estate <span>Without the Headaches</span></h1>
-                <p>Pre-vetted office properties. Tenant-ready interiors. Passive income.</p>
+                <p>Are you a busy professional who wants passive income?</p>
+                <p>Pre-vetted office properties. Tenant-ready interiors. Wealth that works for you.</p>
                 <div class="hero-buttons">
                     <a href="#lead-magnet" class="btn btn-primary">Get Free Investment Calculator</a>
                     <a href="#process" class="btn btn-secondary">How It Works</a>
@@ -646,7 +763,7 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-card">
-                    <h3>5-Year Investment Snapshot</h3>
+                    <h3>5-Year Investment Snapshot*</h3>
                     <div class="hero-stat">
                         <span class="hero-stat-label">Starting Investment</span>
                         <span class="hero-stat-value">₹1 Crore</span>
@@ -663,6 +780,7 @@
                         <span class="hero-stat-label">Total 5-Year Gain</span>
                         <span class="hero-stat-value">₹1.23 Cr</span>
                     </div>
+                    <p class="hero-card-note">*Sample deal. Multiple properties available.</p>
                 </div>
             </div>
         </div>
@@ -692,13 +810,41 @@
         </div>
     </section>
 
+    <!-- Stakes/Failure Section -->
+    <section class="stakes">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>The Cost of Waiting</h2>
+                <p>Every month you delay, you're losing more than just time</p>
+            </div>
+            <div class="stakes-grid">
+                <div class="stake-card">
+                    <div class="stake-icon">📉</div>
+                    <h3>Inflation Erodes Your Savings</h3>
+                    <p>Money sitting in your bank loses 6-7% purchasing power annually. That ₹1 Crore today will only buy ₹70 Lakhs worth in 5 years.</p>
+                </div>
+                <div class="stake-card">
+                    <div class="stake-icon">⏳</div>
+                    <h3>Missing Prime Wealth-Building Years</h3>
+                    <p>The power of compounding works best with time. Every year you wait costs you lakhs in potential returns.</p>
+                </div>
+                <div class="stake-card">
+                    <div class="stake-icon">😓</div>
+                    <h3>Stuck in the Analysis Loop</h3>
+                    <p>More research won't give you confidence. You'll keep waiting for the "perfect deal" that never comes while others build wealth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Imagine Section -->
     <section class="imagine">
         <div class="section-container">
             <div class="section-header">
                 <h2>Imagine This Instead</h2>
-                <p>What if real estate investing was actually passive?</p>
+                <p>Go from overwhelmed investor to confident wealth builder</p>
             </div>
+            <p class="transformation-text">Picture yourself checking your bank account each month and seeing rent deposits arrive like clockwork. No tenant calls. No maintenance headaches. Just passive income funding your lifestyle while your property appreciates in value.</p>
             <div class="imagine-grid">
                 <div class="imagine-card">
                     <div class="imagine-icon">📈</div>
@@ -719,6 +865,54 @@
                     <div class="imagine-icon">🛡️</div>
                     <h3>5%</h3>
                     <p>Annual rental escalation with corporate tenants on long-term leases</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Investors Who Made the Move</h2>
+                <p>Join professionals who are already building passive wealth</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"I was skeptical at first, but the team at Nova Key made everything seamless. My office space in Gurgaon has been generating steady rental income for 18 months now. Best investment decision I've made."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RK</div>
+                        <div class="author-info">
+                            <h4>Rajesh Kumar</h4>
+                            <p>IT Director, Gurgaon</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As a doctor, I have zero time for property management. Nova Key found me a pre-leased office with a 3-year corporate tenant. I literally just collect rent every month."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">PS</div>
+                        <div class="author-info">
+                            <h4>Dr. Priya Sharma</h4>
+                            <p>Cardiologist, Noida</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The 47-point analysis gave me confidence I never had with other properties. Two years in, my returns have exceeded projections. Already looking at my second investment with them."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AM</div>
+                        <div class="author-info">
+                            <h4>Anil Mehta</h4>
+                            <p>Business Owner, Delhi</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
